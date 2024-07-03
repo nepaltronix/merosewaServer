@@ -38,12 +38,9 @@ def random_nepali_name():
 @app.route('/getdata', methods=['GET'])
 def generate_random_data():
     data = {
-        "userName": random_string(8),
         "merchantName": random_nepali_name(),
         "merchantId": random_string(12),
-        "transactionID": random_string(15),
-        "transactionAmount": random_number(1, 1000),
-        "remainingBalance": random_number(0, 1000)
+        "transactionAmount": random_number(1, 1000)
     }
     return jsonify(data)
 
