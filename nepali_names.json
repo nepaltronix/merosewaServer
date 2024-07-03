@@ -1,0 +1,14 @@
+{
+    "names": [
+        {"firstName": "Ram", "surname": "Sharma"},
+        {"firstName": "Sita", "surname": "Thapa"},
+        {"firstName": "Hari", "surname": "Bhandari"},
+        {"firstName": "Gita", "surname": "Rana"},
+        {"firstName": "Krishna", "surname": "Adhikari"},
+        {"firstName": "Raju", "surname": "Karki"},
+        {"firstName": "Laxmi", "surname": "Bhatta"},
+        {"firstName": "Ramesh", "surname": "Tamang"},
+        {"firstName": "Radha", "surname": "Magar"},
+        {"firstName": "Bikash", "surname": "Gurung"}
+    ]
+}

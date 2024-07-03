@@ -1,7 +1,10 @@
+import string
 from flask import Flask, request, jsonify
 from flask_socketio import SocketIO, emit
 import uuid
 from flask_cors import CORS
+import random
+import json
 
 app = Flask(__name__)
 CORS(app)
@@ -14,6 +17,35 @@ transactions = {}
 #   transactionID: string;
 #   transactionAmount: number;
 #   remainingBalance: number;
+
+def random_string(length=10):
+    letters = string.ascii_letters
+    return ''.join(random.choice(letters) for i in range(length))
+
+def random_number(min_value=0, max_value=1000):
+    return round(random.uniform(min_value, max_value), 2)
+
+def load_nepali_names(file_path='nepali_names.json'):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        return json.load(file)["names"]
+
+nepali_names = load_nepali_names()
+
+def random_nepali_name():
+    name = random.choice(nepali_names)
+    return f"{name['firstName']} {name['surname']}"
+
+@app.route('/getdata', methods=['GET'])
+def generate_random_data():
+    data = {
+        "userName": random_string(8),
+        "merchantName": random_nepali_name(),
+        "merchantId": random_string(12),
+        "transactionID": random_string(15),
+        "transactionAmount": random_number(1, 1000),
+        "remainingBalance": random_number(0, 1000)
+    }
+    return jsonify(data)
 
 @app.route('/request_payment', methods=['POST'])
 def request_payment():
