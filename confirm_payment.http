@@ -1,0 +1,7 @@
+
+POST http://0.0.0.0:5001/confirm_payment HTTP/1.1
+content-type: application/json
+
+{
+    "transaction_id": "8c050808-b3e5-4713-81d4-1c420a0174a5"
+}

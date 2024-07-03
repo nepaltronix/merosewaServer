@@ -1,0 +1,9 @@
+
+
+POST http://0.0.0.0:5001/request_payment HTTP/1.1
+content-type: application/json
+
+{
+    "amount": "200",
+    "merchant_code": "1234567"
+}
