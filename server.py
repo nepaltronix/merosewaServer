@@ -60,7 +60,9 @@ def request_payment():
     }
     
     response = {
-        '_transactionId': transactionId
+        '_transactionId': transactionId,
+        'merchantId': merchantId,
+        'transactionAmount': transactionAmount
     }
     
     return jsonify(response)
